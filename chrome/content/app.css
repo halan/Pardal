@@ -1,4 +1,3 @@
-
 div
 {
   color: white;
@@ -9,13 +8,15 @@ div
 
 tabpanels
 {
+    -moz-appearance: none;
     padding: 0 !important;
+    border: none !important;
 }
 #timeline{background: -moz-default-background-color}
-tabs{background-color: -moz-menuhover !important;}
+tabs{background-color: Menu !important;}
 tab
 {
-  background: -moz-menuhover;
+  background: -moz-linear-gradient(rgba(255, 255, 255, .2),  Menu);
   border: 0;
   padding: 0;
   position: relative;
@@ -27,12 +28,14 @@ tab
   -moz-border-left-colors:  rgba(0, 0, 0, .3) rgba(255, 255, 255, .3) rgba(255, 255, 255, .1);
   -moz-border-radius-topleft: 5px;
   -moz-border-radius-topright: 5px;
+  -moz-border-radius-bottomleft: 0;
+  -moz-border-radius-bottomright: 0;
+
   margin-left: 1px;
   border-bottom: none;
   padding: 3px 4px;
   color: MenuText;
 }
-tab[selected="true"]{background-color: -moz-Dialog; color: -moz-DialogText}
-
-tab span{width: 17px; text-align: center; background: blue; -moz-border-radius: 15px; padding: 2px; color: white; text-shadow: -1px -1px 1px black; margin: 3px;}     
+tab[selected="true"]{background: -moz-Dialog; color: -moz-DialogText;   padding-bottom: 0 !important;}
+tab label{margin-left: 3px; display: none;}
 

@@ -1,9 +1,10 @@
 body
 {
   margin: 3px;
-  background: #59b;
-  color: #def;
-  text-shadow: 0 -1px 0 #246;
+  margin-top: 22px;
+  background: #666;
+  color: -moz-DialogText;
+  text-shadow: 0 1px 0 white;
   font: 12px Arial,Sans-serif;
   overflow: scroll;
   overflow-x: hidden
@@ -12,18 +13,56 @@ body
 .tweet
 {
   clear: both;
-  background: -moz-linear-gradient(#59b, #246);
-  padding: 1em;
+  background: -moz-linear-gradient(#F5F5F5, #DDD);
+  border-bottom: 1px solid #AAA;
+  padding: 3px;
+}
+
+.tweet p
+{
+  margin: 0;
+}
+
+.tweet .screen_name
+{
+  color: #BBB;
+  margin-bottom: 2px;
+}
+
+.tweet.stoped
+{
+  background: #DDD;
 }
 
 .tweet img
 {
   float: left;
-  margin: 1em;
+  margin-right: 3px;
 }
 
 .tweet hr
 {
   clear: both;
   border: none;
+}
+
+#trends
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 1em;
+  width: 100%;
+  padding: .5em;
+  color: -moz-dialogtext;
+  background: -moz-dialog;
+  text-shadow: 0 1px 0 white; 
+  -moz-box-shadow: 0 0px 10px black;
+  cursor: default;
+  overflow: hidden;
+}
+
+#trends a:hover
+{
+  -moz-appearance: button;
 }

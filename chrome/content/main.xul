@@ -10,7 +10,7 @@
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   xmlns:html="http://www.w3.org/1999/xhtml">
 
-  <vbox flex="1">
+  <vbox flex="1" id="main-container">
     <tabbox flex="1">
       <hbox>
         <menubar id="sample-menubar">
@@ -24,12 +24,11 @@
         </menubar>
 
       <tabs flex="1">
-        <tab label="Timeline" />
-        <tab label="@Mentions" />
-        <tab label="DMs"/>
+        <tab image="applications-microblogging-panel.png" label="Timeline"/>
+        <tab image="applications-chat-panel.png" label="@mentions" />
+        <tab image="applications-email-panel.png" label="DMs"/>
       </tabs>
   </hbox>
-      <html:div>Trends</html:div>
       <tabpanels flex="1">
         <tabpanel id="timeline">
           <browser type="content" src="timeline.html" flex="1"/>
@@ -46,6 +45,6 @@
         </tabpanel>
       </tabpanels>
     </tabbox>
-    <html:input />
+    <textbox multiline="true" rows="3" />
   </vbox>
 </window>
