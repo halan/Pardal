@@ -1,0 +1,38 @@
+
+div
+{
+  color: white;
+  padding-top: 4px;
+  height: 32px;
+  text-shadow: 1px 1px 1px black !important;
+}
+
+tabpanels
+{
+    padding: 0 !important;
+}
+#timeline{background: -moz-default-background-color}
+tabs{background-color: -moz-menuhover !important;}
+tab
+{
+  background: -moz-menuhover;
+  border: 0;
+  padding: 0;
+  position: relative;
+  -moz-appearance: none;
+  margin-top: 2px;
+  border: 3px solid black;
+  -moz-border-right-colors: rgba(0, 0, 0, .3) rgba(255, 255, 255, .3) rgba(255, 255, 255, .1);
+  -moz-border-top-colors:  rgba(0, 0, 0, .3)  rgba(255, 255, 255, .3) rgba(255, 255, 255, .1);
+  -moz-border-left-colors:  rgba(0, 0, 0, .3) rgba(255, 255, 255, .3) rgba(255, 255, 255, .1);
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  margin-left: 1px;
+  border-bottom: none;
+  padding: 3px 4px;
+  color: MenuText;
+}
+tab[selected="true"]{background-color: -moz-Dialog; color: -moz-DialogText}
+
+tab span{width: 17px; text-align: center; background: blue; -moz-border-radius: 15px; padding: 2px; color: white; text-shadow: -1px -1px 1px black; margin: 3px;}     
+

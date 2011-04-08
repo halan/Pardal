@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="app.css" type="text/css"?>
+
+<window
+  id="main"
+  title="Pardal"
+  width="300" 
+  height="300"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <vbox flex="1">
+    <tabbox flex="1">
+      <hbox>
+        <menubar id="sample-menubar">
+          <menu id="file-menu" label="Menu">
+            <menupopup id="file-popup">
+              <menuitem label="Still planning what put here..."/>
+              <menuseparator/>
+              <menuitem label="Exit"/>
+            </menupopup>
+          </menu>
+        </menubar>
+
+      <tabs flex="1">
+        <tab label="Timeline" />
+        <tab label="@Mentions" />
+        <tab label="DMs"/>
+      </tabs>
+  </hbox>
+      <html:div>Trends</html:div>
+      <tabpanels flex="1">
+        <tabpanel id="timeline">
+          <browser type="content" src="timeline.html" flex="1"/>
+        </tabpanel>
+        <tabpanel id="mentions">
+          <vbox flex="1">
+            <html:div>tweet</html:div>
+          </vbox>
+        </tabpanel>
+        <tabpanel id="timeline">
+          <vbox flex="1">
+            <html:div>tweet</html:div>
+          </vbox>
+        </tabpanel>
+      </tabpanels>
+    </tabbox>
+    <html:input />
+  </vbox>
+</window>

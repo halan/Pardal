@@ -1,0 +1,29 @@
+body
+{
+  margin: 3px;
+  background: #59b;
+  color: #def;
+  text-shadow: 0 -1px 0 #246;
+  font: 12px Arial,Sans-serif;
+  overflow: scroll;
+  overflow-x: hidden
+}
+
+.tweet
+{
+  clear: both;
+  background: -moz-linear-gradient(#59b, #246);
+  padding: 1em;
+}
+
+.tweet img
+{
+  float: left;
+  margin: 1em;
+}
+
+.tweet hr
+{
+  clear: both;
+  border: none;
+}
