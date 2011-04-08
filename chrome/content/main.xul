@@ -45,6 +45,9 @@
         </tabpanel>
       </tabpanels>
     </tabbox>
-    <textbox multiline="true" rows="3" />
+    <stack id="text-enter">
+      <hbox><spacer flex="1" /> <vbox><spacer flex="1" /><label class="word-counter">140</label></vbox> </hbox>
+      <textbox multiline="true" rows="3" />
+    </stack>
   </vbox>
 </window>

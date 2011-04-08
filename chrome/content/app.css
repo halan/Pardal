@@ -38,4 +38,28 @@ tab
 }
 tab[selected="true"]{background: -moz-Dialog; color: -moz-DialogText;   padding-bottom: 0 !important;}
 tab label{margin-left: 3px; display: none;}
+tab image{opacity: .8}
+tab:hover image{opacity: 1}
+tab[selected="true"] image{opacity: 1}
 
+.word-counter
+{
+  -moz-appearance: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+#text-enter textbox
+{
+  -moz-appearance: none;
+  background: rgba(255, 255, 255, .5);
+  border: 1px solid;
+  -moz-border-radius: 4px;
+  margin: 0;
+}
+
+.word-counter
+{
+  padding: 5px 10px;
+}
