@@ -28,6 +28,20 @@ $(function()
   };
 
   load_timeline();
-  setInterval(show_tweet, 1000);
+  var show_tweets_pulse = setInterval(show_tweet, 1000);
   setInterval(load_timeline, 1000*60);
+
+  $('.tweet').live('click', function()
+  {
+    if($(this).hasClass('stoped')) return;
+
+    $(this).addClass('stoped');
+    clearInterval(show_tweets_pulse);
+  });
+
+  $('.tweet.stoped').live('click', function()
+  {
+    $(this).removeClass('stoped');
+    show_tweets_pulse = setInterval(show_tweet, 1000);
+  });
 });
