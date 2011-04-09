@@ -57,6 +57,7 @@ tab[selected="true"] image{opacity: 1}
   border: 1px solid;
   -moz-border-radius: 4px;
   margin: 0;
+  height: 4em;
 }
 
 .word-counter

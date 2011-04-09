@@ -1,21 +1,34 @@
+html
+{
+  margin: 5px;
+  margin-top: 22px;
+}
+
 body
 {
-  margin: 3px;
-  margin-top: 22px;
-  background: #666;
+  margin: 0; padding: 0;
   color: -moz-DialogText;
   text-shadow: 0 1px 0 white;
   font: 12px Arial,Sans-serif;
   overflow: scroll;
-  overflow-x: hidden
+  overflow-x: hidden;
+  height: 100%;
+  width: 100%;
+  background: #666 url('pardal.png') center center fixed no-repeat;
 }
 
 .tweet
 {
   clear: both;
+  opacity: .9;
   background: -moz-linear-gradient(#F5F5F5, #DDD);
   border-bottom: 1px solid #AAA;
   padding: 3px;
+}
+
+.tweet:hover
+{
+  opacity: 1;
 }
 
 .tweet p
@@ -32,6 +45,7 @@ body
 .tweet.stoped
 {
   background: #DDD;
+  opacity: 1;
 }
 
 .tweet img

@@ -24,12 +24,17 @@ $(function()
 
   var show_tweet = function()
   {
-    if(timeline_stack.length) $('body').prepend(timeline_stack.pop());
+    if(timeline_stack.length)
+    {
+      tweet = timeline_stack.pop();
+      tweet.hide().prependTo('body');
+      tweet.slideDown();
+    }
   };
 
   load_timeline();
   var show_tweets_pulse = setInterval(show_tweet, 1000);
-  setInterval(load_timeline, 1000*60);
+  setInterval(load_timeline, 1000*20);
 
   $('.tweet').live('click', function()
   {
