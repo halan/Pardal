@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet href="app.css" type="text/css"?>
+<?xml-stylesheet href="chrome://pardal/skin/app.css" type="text/css"?>
 
 <window
   id="main"
@@ -24,9 +24,9 @@
         </menubar>
 
       <tabs flex="1">
-        <tab image="applications-microblogging-panel.png" label="Timeline"/>
-        <tab image="applications-chat-panel.png" label="@mentions" />
-        <tab image="applications-email-panel.png" label="DMs"/>
+        <tab image="chrome://pardal/skin/applications-microblogging-panel.png" label="Timeline"/>
+        <tab image="chrome://pardal/skin/applications-chat-panel.png" label="@mentions" />
+        <tab image="chrome://pardal/skin/applications-email-panel.png" label="DMs"/>
       </tabs>
   </hbox>
       <tabpanels flex="1">
