@@ -33,8 +33,8 @@ $(function()
   };
 
   load_timeline();
-  var show_tweets_pulse = setInterval(show_tweet, 1000);
-  setInterval(load_timeline, 1000*20);
+  var show_tweets_pulse = setInterval(show_tweet, 1000*3);
+  setInterval(load_timeline, 1000*60);
 
   $('.tweet').live('click', function()
   {
