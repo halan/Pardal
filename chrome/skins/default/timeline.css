@@ -14,7 +14,7 @@ body
   overflow-x: hidden;
   height: 100%;
   width: 100%;
-  background: #666 url('pardal.png') center center fixed no-repeat;
+  background: #666 url('images/pardal.png') center center fixed no-repeat;
 }
 
 .tweet

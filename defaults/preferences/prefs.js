@@ -1,1 +1,1 @@
-pref("toolkit.defaultChromeURI", "chrome://pardal/content/main.xul");
+pref("toolkit.defaultChromeURI", "chrome://pardal/content/ui/main.xul");
