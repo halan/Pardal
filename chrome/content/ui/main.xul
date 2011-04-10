@@ -10,6 +10,10 @@
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   xmlns:html="http://www.w3.org/1999/xhtml">
 
+  <script src="../javascripts/jquery.js"></script>
+  <script src="../javascripts/main.js"></script>
+
+
   <vbox flex="1" id="main-container">
     <tabbox flex="1">
       <hbox>
@@ -25,18 +29,16 @@
 
       <tabs flex="1">
         <tab image="chrome://pardal/skin/images/applications-microblogging-panel.png" label="Timeline"/>
-        <tab image="chrome://pardal/skin/images/applications-chat-panel.png" label="@mentions" />
+        <tab id="mentions_tab" image="chrome://pardal/skin/images/applications-chat-panel.png" label="@mentions" />
         <tab image="chrome://pardal/skin/images/applications-email-panel.png" label="DMs"/>
       </tabs>
   </hbox>
       <tabpanels flex="1">
         <tabpanel id="timeline">
-          <browser type="content" src="../htmls/timeline.html" flex="1"/>
+            <browser id="timeline_browser" type="content" src="../htmls/timeline.html" flex="1"/>
         </tabpanel>
         <tabpanel id="mentions">
-          <vbox flex="1">
-            <html:div>tweet</html:div>
-          </vbox>
+          <browser id="mentions_browser" type="content" src="../htmls/timeline.html" flex="1"/>
         </tabpanel>
         <tabpanel id="timeline">
           <vbox flex="1">
