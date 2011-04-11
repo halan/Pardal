@@ -43,12 +43,10 @@ $(window).resize(function()
 
 var counter = function(input){
   var counter = $('#text-enter label'),
-      limit = 140;
-      
-    var n = input.value.replace(/{.*?}/g, '').length;
-    if (n > limit){
-      counter.css('color', 'red');
-    }
-    counter.text( parseInt(limit) - parseInt(n) );
-
+      limit = 140,
+      n = input.value.length;
+  if (n > limit){
+    counter.css('color', 'red');
+  }
+  counter.text( parseInt(limit) - parseInt(n) );
 };
