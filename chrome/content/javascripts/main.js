@@ -1,30 +1,42 @@
-var split_column = function()
+var split_columns = function(width)
 {
-  if($('#timeline browser').size() < 2 )
+  var min_column = 300;
+  var columns = Math.min(parseInt(width/200), $('tabpanel').size());
+  var current_columns_size = $('#timeline browser').size();
+
+  if(current_columns_size < columns)
   {
-    var browser = $('#mentions_browser').get(0);
-    $('#timeline').get(0).appendChild(browser);
+    for(column=1; column < columns; column++)
+    {
+      var browser = $('browser', $('tabpanel').get(column)).get(0);
+      $('tabpanel').get(0).appendChild(browser);
+      $($('tab').get(column)).hide();
+    }
 
-    $('tabpanels').attr('selectedIndex', 0);
-    $('tab:first').attr('selected', true);
-
-    $('#mentions_tab').hide();
+    $('tab[selected=true]:not(:visible)').each(function()
+    {
+      $('tabpanels').attr('selectedIndex', 0);
+      $('tab:first').attr('selected', true);
+    });
   }
-}
-
-var join_column = function()
-{
-  if($('#timeline browser').size() >= 2 )
+  else if( current_columns_size > columns)
   {
-    var browser = $('#mentions_browser').get(0);
-    $('#mentions').get(0).appendChild(browser);
-    $('#mentions_tab').show();
+    //FIXME sometimes dont change from 2 to 3
+    var join_columns_size = current_columns_size - columns; 
+    for(column=0; column < current_columns_size; column++)
+    {
+      if(!column < columns)
+      {
+        var browser = $('#timeline browser').get(1);
+        $('tabpanel').get(column).appendChild(browser);
+        $($('tab').get(column)).show();
+      }
+    }
   }
 }
 
 
 $(window).resize(function()
 {
-  if(window.outerWidth > 300*2) split_column();
-  if(window.outerWidth < 300*2) join_column();
+  split_columns(window.outerWidth);
 });

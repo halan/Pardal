@@ -28,9 +28,9 @@
         </menubar>
 
       <tabs flex="1">
-        <tab d="timeline_tab" image="chrome://pardal/skin/images/applications-microblogging-panel.png" label="Timeline"/>
+        <tab id="timeline_tab" image="chrome://pardal/skin/images/applications-microblogging-panel.png" label="Timeline"/>
         <tab id="mentions_tab" image="chrome://pardal/skin/images/applications-chat-panel.png" label="@mentions" />
-        <tab image="chrome://pardal/skin/images/applications-email-panel.png" label="DMs"/>
+        <tab id="dm_tab" image="chrome://pardal/skin/images/applications-email-panel.png" label="DMs"/>
       </tabs>
   </hbox>
       <tabpanels flex="1">
@@ -40,10 +40,8 @@
         <tabpanel id="mentions">
           <browser id="mentions_browser" type="content" src="../htmls/timeline.html" flex="1"/>
         </tabpanel>
-        <tabpanel id="timeline">
-          <vbox flex="1">
-            <html:div>tweet</html:div>
-          </vbox>
+        <tabpanel id="dm">
+          <browser id="dm_browser" type="content" src="../htmls/timeline.html" flex="1"/>
         </tabpanel>
       </tabpanels>
     </tabbox>
