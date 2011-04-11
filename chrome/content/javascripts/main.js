@@ -4,6 +4,10 @@ var split_column = function()
   {
     var browser = $('#mentions_browser').get(0);
     $('#timeline').get(0).appendChild(browser);
+
+    $('tabpanels').attr('selectedIndex', 0);
+    $('tab:first').attr('selected', true);
+
     $('#mentions_tab').hide();
   }
 }

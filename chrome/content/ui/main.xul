@@ -28,7 +28,7 @@
         </menubar>
 
       <tabs flex="1">
-        <tab image="chrome://pardal/skin/images/applications-microblogging-panel.png" label="Timeline"/>
+        <tab d="timeline_tab" image="chrome://pardal/skin/images/applications-microblogging-panel.png" label="Timeline"/>
         <tab id="mentions_tab" image="chrome://pardal/skin/images/applications-chat-panel.png" label="@mentions" />
         <tab image="chrome://pardal/skin/images/applications-email-panel.png" label="DMs"/>
       </tabs>
