@@ -46,8 +46,14 @@
       </tabpanels>
     </tabbox>
     <stack id="text-enter">
-      <hbox><spacer flex="1" /> <vbox><spacer flex="1" /><label class="word-counter">140</label></vbox> </hbox>
-      <textbox multiline="true" rows="3" />
+      <hbox>
+        <spacer flex="1" />
+        <vbox>
+          <spacer flex="1" />
+          <label class="word-counter">140</label>
+        </vbox>
+      </hbox>
+      <textbox multiline="true" rows="2" onkeyup="counter(this);"/>
     </stack>
   </vbox>
 </window>
