@@ -48,6 +48,7 @@ tab[selected="true"] image{opacity: 1}
   position: absolute;
   bottom: 0;
   right: 0;
+  padding: 5px 15px;
 }
 
 #text-enter textbox
@@ -55,12 +56,7 @@ tab[selected="true"] image{opacity: 1}
   -moz-appearance: none;
   background: rgba(255, 255, 255, .5);
   border: 1px solid;
-  -moz-border-radius: 4px;
+  border-radius: 4px;
   margin: 0;
   height: 4em;
-}
-
-.word-counter
-{
-  padding: 5px 10px;
 }
