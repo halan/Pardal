@@ -63,3 +63,9 @@ tab[selected="true"] image{opacity: 1}
   overflow:hidden;
   width:80%;
 }
+
+#text-enter.counter-overflow .word-counter
+{
+    color: red;
+}
+

@@ -53,7 +53,7 @@
           <label class="word-counter">140</label>
         </vbox>
       </hbox>
-      <textbox multiline="true" rows="2" onkeyup="counter(this);"/>
+      <textbox multiline="true" rows="2" limit="140" onkeyup="counter(this);"/>
     </stack>
   </vbox>
 </window>

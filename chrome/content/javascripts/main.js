@@ -41,12 +41,18 @@ $(window).resize(function()
   split_columns(window.outerWidth);
 });
 
+
+/*--- counter ---*/
 var counter = function(input){
-  var counter = $('#text-enter label'),
-      limit = 140,
+
+  var $$ = $(input),
+      container = $$.parents('#text-enter'),
+      counter = container.find('.word-counter'),
+      limit = $$.attr('limit'),
       n = input.value.length;
-  if (n > limit){
-    counter.css('color', 'red');
-  }
+
+  if (n > limit) container.addClass('counter-overflow');
+  else container.removeClass('counter-overflow');
+
   counter.text( parseInt(limit) - parseInt(n) );
 };
