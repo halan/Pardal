@@ -1,3 +1,5 @@
+/*--- spliting columns --*/
+
 var split_columns = function(width)
 {
   var min_column = 300;
@@ -21,7 +23,6 @@ var split_columns = function(width)
   }
   else if( current_columns_size > columns)
   {
-    //FIXME sometimes dont change from 2 to 3
     var join_columns_size = current_columns_size - columns; 
     for(column=0; column < current_columns_size; column++)
     {
