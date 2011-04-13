@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="chrome://pardal/skin/main.css" type="text/css"?>
+
+<window
+  id="auth"
+  title="Pardal"
+  width="300" 
+  height="300"
+  onload="main()"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml">
+
+  <script src="../javascripts/jquery.js"></script>
+  <script src="../javascripts/jsOAuth-0.10.min.js"></script>
+  <script src="../javascripts/oauth_twitter.js"></script>
+
+  <grid flex="1">
+      <columns>
+          <column flex="1" />
+          <column flex="2" />
+      </columns>
+
+      <rows>
+          <row>
+              <button label="Autenticar" flex="3" onclick="request_auth()" />
+          </row>
+          <row>
+              <label controle="pin" value="PIN:" flex="1"/>
+              <textbox id="pin" flex="2"/>
+          </row>
+          <row>
+              <button label="Salvar" flex="3" onclick="save_auth()" />
+          </row>
+
+      </rows>
+  </grid>
+
+</window>

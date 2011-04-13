@@ -50,3 +50,5 @@ $(function()
     show_tweets_pulse = setInterval(show_tweet, 1000);
   });
 });
+
+
