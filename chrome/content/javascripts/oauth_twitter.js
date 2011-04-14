@@ -12,6 +12,8 @@ var op = { consumerKey : prefManager.getCharPref("oauth.consumer_key"),
          accessParams;
 var oauth = OAuth(op);
 
+
+
 var open_external = function(url)
 {
     var ioservice = Components.classes["@mozilla.org/network/io-service;1"]
@@ -31,5 +33,5 @@ var tweet = function(text, success, fail)
 
 var verify_credentials = function(success, fail)
 {
-    //TODO
+    oauth.getJSON("http://api.twitter.com/1/account/verify_credentials.json", success, fail);
 }

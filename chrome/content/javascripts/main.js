@@ -9,6 +9,14 @@ $(window).load(function()
         $('#authorization, #signin-button').hide();
     }
 
+    verify_credentials(function(data)
+    {
+        $('#timeline_tab').attr('image', data.profile_image_url);
+        $('#timeline_browser').get
+    }, function(data)
+    {
+        dump(data.text)
+    });
 
     $('#pin').keyup(function(e)
     {

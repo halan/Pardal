@@ -39,7 +39,7 @@
 	  </hbox>
       <tabpanels flex="1">
         <tabpanel id="timeline">
-            <browser id="timeline_browser" type="content" src="../htmls/timeline.html" flex="1"/>
+            <browser id="timeline_browser" type="chrome" src="../htmls/timeline.html" flex="1"/>
         </tabpanel>
         <tabpanel id="mentions">
           <browser id="mentions_browser" type="content" src="" flex="1"/>
