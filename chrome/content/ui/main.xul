@@ -13,8 +13,8 @@
   <script src="../javascripts/jquery.js"></script>
   <script src="../javascripts/jsOAuth-0.10.min.js"></script>
   <script src="../javascripts/oauth_twitter.js"></script>
+  <script src="../javascripts/spliting-columns.js"></script>
   <script src="../javascripts/main.js"></script>
-
 
   <vbox flex="1" id="main-container">
     <tabbox flex="1">
