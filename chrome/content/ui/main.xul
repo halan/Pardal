@@ -55,7 +55,7 @@
           <label class="word-counter">140</label>
         </vbox>
       </hbox>
-      <textbox id="text-enter-tweet" multiline="true" rows="2" limit="140" onkeyup="counter(this);"/>
+      <textbox id="text-enter-tweet" multiline="true" rows="2" limit="140"/>
       <vbox id="authorization" flex="1">
           <label>Authorize Pardal access</label>
           <hbox>
