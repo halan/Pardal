@@ -1,11 +1,22 @@
+var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
+                                      .getService(Components.interfaces.nsIPrefBranch);
+var op = { consumerKey : prefManager.getCharPref("oauth.consumer_key"),
+           consumerSecret : prefManager.getCharPref("oauth.consumer_secret"),
+           accessTokenKey : prefManager.getCharPref("oauth.token"),
+           accessTokenSecret : prefManager.getCharPref("oauth.token_secret")
+         };
+var oauth = OAuth(op);
+
+
 $(function()
 {
   var timeline_stack = [];
 
   load_timeline = function()
   {
-    $.getJSON('http://api.twitter.com/1/statuses/public_timeline.json', function(r)
+    oauth.getJSON('http://api.twitter.com/1/statuses/home_timeline.json', function(r)
     {
+      dump('hi')
       $.each(r, function()
       {
         var tweet = $('<div class="tweet">'+
@@ -19,7 +30,7 @@ $(function()
           timeline_stack.push(tweet);
         });
       });
-    });
+    }, function(d){dump(d)});
   };
 
   var show_tweet = function()

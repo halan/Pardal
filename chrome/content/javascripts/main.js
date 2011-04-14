@@ -9,6 +9,7 @@ $(window).load(function()
         $('#authorization, #signin-button').hide();
     }
 
+
     verify_credentials(function(data)
     {
         $('#timeline_tab').attr('image', data.profile_image_url);
