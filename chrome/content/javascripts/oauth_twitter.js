@@ -26,7 +26,7 @@ var open_external = function(url)
 
 var tweet = function(text, success, fail)
 {
-    //TODO
+    oauth.post("http://api.twitter.com/1/statuses/update.json", {status: text.replace("\n", '')}, success, fail);
 }
 
 var verify_credentials = function(success, fail)
