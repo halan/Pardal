@@ -12,6 +12,9 @@
 
   <script src="../javascripts/jquery.js"></script>
   <script src="../javascripts/main.js"></script>
+  <script src="../javascripts/jsOAuth-0.10.min.js"></script>
+  <script src="../javascripts/oauth_twitter.js"></script>
+
 
 
   <vbox flex="1" id="main-container">
@@ -30,7 +33,7 @@
       <tabs flex="1">
         <tab id="timeline_tab" image="chrome://pardal/skin/images/applications-microblogging-panel.png" label="Timeline"/>
         <tab id="mentions_tab" image="chrome://pardal/skin/images/applications-chat-panel.png" label="@mentions" />
-        <tab id="dm_tab" image="chrome://pardal/skin/images/applications-email-panel.png" label="DMs"/>
+        <tab id="dm_tab" image="chrome://pardal/skin/images/applications-email-panel.png" label="@mentions" />
       </tabs>
   </hbox>
       <tabpanels flex="1">
@@ -41,7 +44,7 @@
           <browser id="mentions_browser" type="content" src="../htmls/timeline.html" flex="1"/>
         </tabpanel>
         <tabpanel id="dm">
-          <browser id="dm_browser" type="content" src="../htmls/timeline.html" flex="1"/>
+          <browser id="dm_browser" type="content" src="about:config" flex="1"/>
         </tabpanel>
       </tabpanels>
     </tabbox>
@@ -53,7 +56,18 @@
           <label class="word-counter">140</label>
         </vbox>
       </hbox>
-      <textbox multiline="true" rows="2" limit="140" onkeyup="counter(this);"/>
+      <textbox id="text-enter-tweet" multiline="true" rows="2" limit="140" onkeyup="counter(this);"/>
+      <vbox id="authorization" flex="1">
+          <label>Authorize Pardal access</label>
+          <hbox>
+              <label>PIN code:</label>
+              <textbox id="pin" />
+          </hbox>
+      </vbox>
+      <button id="signin_button" onclick="request_auth()">
+          <image src="chrome://pardal/skin/images/applications-microblogging-panel.png"/>
+          <label>Sign in Twitter</label>
+      </button>
     </stack>
   </vbox>
 </window>

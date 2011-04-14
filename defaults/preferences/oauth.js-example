@@ -1,0 +1,7 @@
+pref("oauth.consumer_key", "PUT YOUR CONSUMER KEY HERE");
+pref("oauth.consumer_secret", "PUT YOUR CONSUMER SECRET HERE");
+
+pref("oauth.token", "");
+pref("oauth.token_secret", "");
+
+

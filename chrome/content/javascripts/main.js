@@ -47,3 +47,6 @@ var counter = function (input) {
 
   counter.text( parseInt(limit) - parseInt(n) );
 };
+
+
+
