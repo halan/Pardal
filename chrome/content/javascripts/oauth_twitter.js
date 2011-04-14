@@ -24,13 +24,16 @@ var open_external = function(url)
 
 var request_auth = function()
 {
-    dump('request token');
+    $('#signin_button label').text('Loadding...');
     oauth.get('https://api.twitter.com/oauth/request_token', function(data)
     {
-        open_external("https://api.twitter.com/oauth/authorize?"+data.text)
-        requestParams = data.text
-    },function(data) { 1; });
-}
+        open_external("https://api.twitter.com/oauth/authorize?"+data.text);
+        $('#signin_button').hide();
+        requestParams = data.text;
+    },function(data)
+    {
+    });
+};
 
 var get_vars_from_query_string  = function(text)
 {
@@ -44,10 +47,8 @@ var get_vars_from_query_string  = function(text)
     return out;
 }
 
-var save_auth = function()
+var save_auth = function(pin)
 {
-    var pin = $('#pin').val();
-
     oauth.get('https://api.twitter.com/oauth/access_token?oauth_verifier='+pin+'&'+requestParams,
     function(data)
     {
@@ -56,7 +57,23 @@ var save_auth = function()
 
         prefManager.setCharPref("oauth.token", accessParams.oauth_token);
         prefManager.setCharPref("oauth.token_secret", accessParams.oauth_token_secret);
-        dump(prefManager.getCharPref("oauth.token"))
+        $('#authorization').hide();
     },
     function(data){ dump('error')});
 }
+
+$(window).load(function()
+{
+    if( prefManager.getCharPref("oauth.token") +
+        prefManager.getCharPref("oauth.token_secret") != '')
+    {
+        oauth.setAccessToken([prefManager.getCharPref("oauth.token"),
+                                prefManager.getCharPref("oauth.token_secret")]);
+        $('#authorization, #signin_button').hide();
+    }
+
+    $('#pin').keyup(function(e)
+    {
+       if(e.keyCode == 13) save_auth($('#pin').val());
+    });
+});

@@ -48,8 +48,5 @@ var counter = function (input) {
   counter.text( parseInt(limit) - parseInt(n) );
 };
 
-var main = function()
-{
-    $('.word-counter').text('abrindo')
-    window.open('chrome://pardal/content/ui/auth.xul', "auth", "chrome")
-}
+
+

@@ -7,12 +7,14 @@
   title="Pardal"
   width="300" 
   height="300"
-  onload="main()"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   xmlns:html="http://www.w3.org/1999/xhtml">
 
   <script src="../javascripts/jquery.js"></script>
   <script src="../javascripts/main.js"></script>
+  <script src="../javascripts/jsOAuth-0.10.min.js"></script>
+  <script src="../javascripts/oauth_twitter.js"></script>
+
 
 
   <vbox flex="1" id="main-container">
@@ -54,7 +56,18 @@
           <label class="word-counter">140</label>
         </vbox>
       </hbox>
-      <textbox multiline="true" rows="2" limit="140" onkeyup="counter(this);"/>
+      <textbox id="text-enter-tweet" multiline="true" rows="2" limit="140" onkeyup="counter(this);"/>
+      <vbox id="authorization" flex="1">
+          <label>Authorize Pardal access</label>
+          <hbox>
+              <label>PIN code:</label>
+              <textbox id="pin" />
+          </hbox>
+      </vbox>
+      <button id="signin_button" onclick="request_auth()">
+          <image src="chrome://pardal/skin/images/applications-microblogging-panel.png"/>
+          <label>Sign in Twitter</label>
+      </button>
     </stack>
   </vbox>
 </window>
