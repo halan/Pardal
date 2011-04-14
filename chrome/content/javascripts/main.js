@@ -3,21 +3,11 @@ $(window).load(function()
     if( prefManager.getCharPref("oauth.token") +
         prefManager.getCharPref("oauth.token_secret") != '')
     {
-//        oauth.setAccessToken([prefManager.getCharPref("oauth.token"),
-///                                prefManager.getCharPref("oauth.token_secret")]);
+        oauth.setAccessToken([prefManager.getCharPref("oauth.token"),
+                                prefManager.getCharPref("oauth.token_secret")]);
 
         $('#authorization, #signin-button').hide();
     }
-
-    dump('token ->'+prefManager.getCharPref('oauth.token')+"\n");
-    dump('token_secret ->'+prefManager.getCharPref('oauth.token_secret')+"\n");
-    dump('consumer_key ->'+prefManager.getCharPref('oauth.consumer_key')+"\n");
-    dump('consumer_secret ->'+prefManager.getCharPref('oauth.consumer_secret')+"\n");
-
-    oauth = OAuth({consumerKey : prefManager.getCharPref('oauth.consumer_key'),
-                    consumerSecret : prefManager.getCharPref('oauth.consumer_secret'),
-                    accessTokenKey : prefManager.getCharPref('oauth.token'),
-                    accessTokenSecret : prefManager.getCharPref('oauth.token_secret') });
 
 
     $('#pin').keyup(function(e)
