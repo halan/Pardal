@@ -11,10 +11,9 @@
   xmlns:html="http://www.w3.org/1999/xhtml">
 
   <script src="../javascripts/jquery.js"></script>
-  <script src="../javascripts/main.js"></script>
   <script src="../javascripts/jsOAuth-0.10.min.js"></script>
   <script src="../javascripts/oauth_twitter.js"></script>
-
+  <script src="../javascripts/main.js"></script>
 
 
   <vbox flex="1" id="main-container">
@@ -64,7 +63,7 @@
               <textbox id="pin" />
           </hbox>
       </vbox>
-      <button id="signin_button" onclick="request_auth()">
+      <button id="signin-button">
           <image src="chrome://pardal/skin/images/applications-microblogging-panel.png"/>
           <label>Sign in Twitter</label>
       </button>

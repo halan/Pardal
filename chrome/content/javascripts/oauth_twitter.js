@@ -1,6 +1,7 @@
+//Globals
+
 var prefManager = Components.classes["@mozilla.org/preferences-service;1"]
                                       .getService(Components.interfaces.nsIPrefBranch);
-
 var op = { consumerKey : prefManager.getCharPref("oauth.consumer_key"),
            consumerSecret : prefManager.getCharPref("oauth.consumer_secret")
          },
@@ -22,17 +23,19 @@ var open_external = function(url)
 }
 
 
-var request_auth = function()
+var request_auth = function(loading, success, fail)
 {
-    $('#signin_button label').text('Loadding...');
+    loading = (loading || function(){});
+    success = (success || function(){});
+    fail = (fail || function(){});
+
+    loading();
     oauth.get('https://api.twitter.com/oauth/request_token', function(data)
     {
         open_external("https://api.twitter.com/oauth/authorize?"+data.text);
-        $('#signin_button').hide();
+        success();
         requestParams = data.text;
-    },function(data)
-    {
-    });
+    },fail);
 };
 
 var get_vars_from_query_string  = function(text)
@@ -47,8 +50,11 @@ var get_vars_from_query_string  = function(text)
     return out;
 }
 
-var save_auth = function(pin)
+var save_auth = function(pin, success, fail)
 {
+    success = (success || function(){});
+    fail = (fail || function(){});
+
     oauth.get('https://api.twitter.com/oauth/access_token?oauth_verifier='+pin+'&'+requestParams,
     function(data)
     {
@@ -57,23 +63,6 @@ var save_auth = function(pin)
 
         prefManager.setCharPref("oauth.token", accessParams.oauth_token);
         prefManager.setCharPref("oauth.token_secret", accessParams.oauth_token_secret);
-        $('#authorization').hide();
-    },
-    function(data){ dump('error')});
+        success();
+    },fail);
 }
-
-$(window).load(function()
-{
-    if( prefManager.getCharPref("oauth.token") +
-        prefManager.getCharPref("oauth.token_secret") != '')
-    {
-        oauth.setAccessToken([prefManager.getCharPref("oauth.token"),
-                                prefManager.getCharPref("oauth.token_secret")]);
-        $('#authorization, #signin_button').hide();
-    }
-
-    $('#pin').keyup(function(e)
-    {
-       if(e.keyCode == 13) save_auth($('#pin').val());
-    });
-});

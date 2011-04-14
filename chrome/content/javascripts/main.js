@@ -49,4 +49,39 @@ var counter = function (input) {
 };
 
 
+$(window).load(function()
+{
+    if( prefManager.getCharPref("oauth.token") +
+        prefManager.getCharPref("oauth.token_secret") != '')
+    {
+        oauth.setAccessToken([prefManager.getCharPref("oauth.token"),
+                                prefManager.getCharPref("oauth.token_secret")]);
+        $('#authorization, #signin-button').hide();
+    }
 
+    $('#pin').keyup(function(e)
+    {
+       if(e.keyCode == 13)
+        save_auth($('#pin').val(), function()
+        {
+            $('#authorization').hide();
+        }, function()
+        {
+           dump('Erro!'); 
+        });
+    });
+
+    $('#signin-button').click(function()
+    {
+        request_auth(function()
+        {
+            $('#signin-button label').text('Loadding...');
+        }, function()
+        {
+            $('#signin-button').hide();
+        }, function(data)
+        {
+           dump('error: '+data.text);
+        });
+    });
+});
