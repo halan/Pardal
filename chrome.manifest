@@ -1,2 +1,4 @@
-content pardal file:chrome/content/
-skin pardal default file:chrome/skins/default/
+content pardal	file:chrome/content/
+skin	pardal	default file:chrome/skins/default/
+locale	pardal	en-US   file:chrome/locale/en-US/
+locale	pardal	pt-BR   file:chrome/locale/pt-BR/

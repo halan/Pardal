@@ -1,2 +1,4 @@
-content pardal file:content/
-skin pardal default file:skins/default/
+content pardal	file:content/
+skin	pardal	default file:skins/default/
+locale	pardal	en-US   file:locale/en-US/
+locale	pardal	pt-BR   file:locale/pt-BR/

@@ -1,0 +1,12 @@
+<!ENTITY pardal.main.menu "Menu">
+<!ENTITY pardal.main.menu.option1 "Still planning what put here...">
+<!ENTITY pardal.main.menu.exit "Exit">
+
+<!ENTITY pardal.main.tab.timeline "Timeline">
+<!ENTITY pardal.main.tab.mentions "Mentions">
+<!ENTITY pardal.main.tab.directMessages "Direct messages">
+
+<!ENTITY pardal.main.limit "140">
+<!ENTITY pardal.main.authorization "Authorize Pardal access">
+<!ENTITY pardal.main.authorization.pinCode "PIN code:">
+<!ENTITY pardal.main.signIn "Sign in Twitter">

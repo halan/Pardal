@@ -2,6 +2,8 @@
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
 <?xml-stylesheet href="chrome://pardal/skin/main.css" type="text/css"?>
 
+<!DOCTYPE overlay SYSTEM "chrome://pardal/locale/main.dtd">
+
 <window
   id="main"
   title="Pardal"
@@ -20,21 +22,21 @@
     <tabbox flex="1">
       <hbox>
         <menubar id="sample-menubar">
-          <menu id="file-menu" label="Menu">
+          <menu id="file-menu" label="&pardal.main.menu;">
             <menupopup id="file-popup">
-              <menuitem label="Still planning what put here..."/>
+              <menuitem label="&pardal.main.menu.option1;"/>
               <menuseparator/>
-              <menuitem label="Exit"/>
+              <menuitem label="&pardal.main.menu.exit;"/>
             </menupopup>
           </menu>
         </menubar>
 
-      <tabs flex="1">
-        <tab id="timeline_tab" image="chrome://pardal/skin/images/applications-microblogging-panel.png" label="Timeline"/>
-        <tab id="mentions_tab" image="chrome://pardal/skin/images/applications-chat-panel.png" label="@mentions" />
-        <tab id="dm_tab" image="chrome://pardal/skin/images/applications-email-panel.png" label="@mentions" />
-      </tabs>
-  </hbox>
+		<tabs flex="1">
+		  <tab id="timeline_tab" image="chrome://pardal/skin/images/applications-microblogging-panel.png" label="&pardal.main.tab.timeline;"/>
+		  <tab id="mentions_tab" image="chrome://pardal/skin/images/applications-chat-panel.png" label="&pardal.main.tab.mentions;" />
+		  <tab id="dm_tab" image="chrome://pardal/skin/images/applications-email-panel.png" label="&pardal.main.tab.directMessages;" />
+		</tabs>
+	  </hbox>
       <tabpanels flex="1">
         <tabpanel id="timeline">
             <browser id="timeline_browser" type="content" src="../htmls/timeline.html" flex="1"/>
@@ -52,20 +54,20 @@
         <spacer flex="1" />
         <vbox>
           <spacer flex="1" />
-          <label class="word-counter">140</label>
+          <label class="word-counter">&pardal.main.limit;</label>
         </vbox>
       </hbox>
-      <textbox id="text-enter-tweet" multiline="true" rows="2" limit="140"/>
+      <textbox id="text-enter-tweet" multiline="true" rows="2" limit="&pardal.main.limit;"/>
       <vbox id="authorization" flex="1">
-          <label>Authorize Pardal access</label>
+          <label>&pardal.main.authorization;</label>
           <hbox>
-              <label>PIN code:</label>
+              <label>&pardal.main.authorization.pinCode;</label>
               <textbox id="pin" />
           </hbox>
       </vbox>
       <button id="signin-button">
           <image src="chrome://pardal/skin/images/applications-microblogging-panel.png"/>
-          <label>Sign in Twitter</label>
+          <label>&pardal.main.signIn;</label>
       </button>
     </stack>
   </vbox>
