@@ -10,6 +10,7 @@ var oauth = OAuth(op);
 
 $(function()
 {
+
   var timeline_stack = [];
 
   load_timeline = function()

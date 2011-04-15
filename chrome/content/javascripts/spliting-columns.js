@@ -1,7 +1,7 @@
 /*--- spliting columns --*/
 
 var split_columns = function (width) {
-  var min_column = 300;
+  var min_column = 350;
   var columns = Math.min(parseInt(width / 200), $('tabpanel').size());
   var current_columns_size = $('#timeline browser').size();
 
