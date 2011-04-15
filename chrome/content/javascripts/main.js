@@ -9,12 +9,16 @@ $(window).load(function()
         $('#authorization, #signin-button').hide();
     }
 
-
     verify_credentials(function(data)
     {
         $('#timeline_tab').attr('image', data.profile_image_url);
-        $('#timeline_browser').get
-    }, function(data)
+
+        var background = '#'+data.profile_background_color+
+                                   ' url('+data.profile_background_image_url+') '+
+                                        (data.profile_background_tile ? '' : 'no-repeat')+';';
+        $('#timeline_browser').get(0).contentDocument.querySelector('html')
+                                                        .setAttribute('style', 'background: '+background);
+    }, function(data) 
     {
         dump(data.text)
     });
