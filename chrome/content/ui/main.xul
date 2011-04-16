@@ -12,8 +12,8 @@
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   xmlns:html="http://www.w3.org/1999/xhtml">
 
-  <script src="../javascripts/jquery.js"></script>
-  <script src="../javascripts/jsOAuth-0.10.min.js"></script>
+  <script src="../javascripts/min/jquery.js"></script>
+  <script src="../javascripts/min/jsoauth.js"></script>
   <script src="../javascripts/oauth_twitter.js"></script>
   <script src="../javascripts/spliting-columns.js"></script>
   <script src="../javascripts/main.js"></script>
