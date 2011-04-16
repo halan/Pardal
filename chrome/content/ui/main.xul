@@ -17,6 +17,7 @@
   <script src="../javascripts/oauth_twitter.js"></script>
   <script src="../javascripts/spliting-columns.js"></script>
   <script src="../javascripts/main.js"></script>
+  <script src="../javascripts/menu.js"></script>
 
   <vbox flex="1" id="main-container">
     <tabbox flex="1">
@@ -26,7 +27,7 @@
             <menupopup id="file-popup">
               <menuitem label="&pardal.main.menu.option1;"/>
               <menuseparator/>
-              <menuitem label="&pardal.main.menu.exit;"/>
+              <menuitem label="&pardal.main.menu.exit;" onclick="exit();"/>
             </menupopup>
           </menu>
         </menubar>
